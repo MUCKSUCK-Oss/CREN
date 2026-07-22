@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'models/project_card.dart';
+import 'screens/crew_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,17 +22,13 @@ class CrenApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Cren',
-      theme: ThemeData(brightness: Brightness.dark, useMaterial3: true),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        useMaterial3: true,
+        colorSchemeSeed: const Color(0xFF3DDC97),
+      ),
       home: const CrewScreen(),
     );
-  }
-}
-
-class CrewScreen extends StatelessWidget {
-  const CrewScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(body: Center(child: Text('Crew screen goes here')));
   }
 }
