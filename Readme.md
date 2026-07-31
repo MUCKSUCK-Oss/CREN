@@ -1,52 +1,37 @@
-# Cren - Gamified Hack Club & Academic Dashboard
+# Cren
 
-Cren is a custom-built, gamified productivity dashboard designed specifically to balance academic workloads with Hack Club projects. It acts as a central, interactive hub to track assignments, manage hackathon submissions, and eliminate procrastination through a dynamic, visual interface. 
+A gamified daily planner built for Hack Club stuff and school, so nothing gets lost between a late coding session and a physics exam.
 
-Distributed independently as an APK, Cren bypasses traditional app stores to provide a seamless, open-source productivity tool tailored for student developers.
+## Why
 
-## 🚀 Features
+I kept missing deadlines — not because I forgot to think about them, but because by the time I was actually free to fill out a form or write a devlog, I was too tired, and then exams took over the next morning. Cren keeps everything in one place on my phone instead of scattered across a calendar app, sticky notes, and half-remembered plans.
 
-### 🎮 Gamified Daily Planner
-* **Daily Check-ins:** Interactive morning prompts (e.g., "Where are you?", "What will you do in the future?") to start the day with intention.
-* **Visual Urgency:** Dedicated countdown timers and "time left" trackers for upcoming deadlines to keep momentum high.
-* **Engaging UI:** Replaces the standard, boring calendar with an interface that motivates you to check your daily status.
+## What it does
 
-### 📚 Academic Task Management
-* **Google Tasks Sync:** Seamlessly integrates with Google Tasks to pull in coursework, tests, and study schedules.
-* **Subject Isolation:** Dedicated dashboard sections for tracking specific subjects (like Physics and Chemistry) so academic priorities never get lost in the shuffle.
+- **Crew screen** — today's date, plus every active project or exam as a card
+- **Project cards** — break work into "where you are," "what's next," and a Hack Club submission status
+- **Exam cards** — syllabus notes, a study video link, and the date
+- **Pomodoro timer** — built in, no separate app needed
+- **Hack Club status tracking** — set manually for now, OAuth-based auto-sync coming once I have a registered client ID
 
-### 🛠️ Hack Club API Hub
-* **Ship Directly from Mobile:** Write and push "Develop" updates directly to Hack Club platforms (Arcade, Scrapbook, High Seas) without needing to open a laptop.
-* **Real-Time Status Tracking:** Integrates with the Horizon API to instantly track submission statuses (Pending, Approved, Rejected) right from the dashboard.
-* **Event Discovery:** Automatically pulls upcoming hackathons, AMAs, and events so you never miss an opportunity.
+## Stack
 
-## 🎨 UI Concepts
+- Flutter (Dart)
+- Hive for local storage — no backend, no login, no account system
+- Shipped as a straight APK, no Play Store
 
-*(Upload your PDF sketches or images to a folder named `assets` in your repo, then replace these links to show off your UI design)*
+## Running it
 
-![Dashboard Layout](./assets/dashboard_sketch_1.png)
-![Task Tracker](./assets/dashboard_sketch_2.png)
+\`\`\`bash
+git clone https://github.com/MUCKSUCK-Oss/CREN.git
+cd CREN
+flutter pub get
+flutter run
+\`\`\`
 
-## 📱 Installation
+Needs the Flutter SDK installed and a device or emulator connected.
 
-Cren is distributed directly to users. You will not find it on the App Store or Google Play Store.
+## What's next
 
-1. Navigate to the **Releases** tab in this repository.
-2. Download the latest `.apk` file to your Android device.
-3. Open the downloaded file and select **Install** (you may need to enable "Install from unknown sources" in your device settings).
-4. Launch Cren, authenticate with your Google and Hack Club accounts, and start shipping!
-
-## 💻 Development & Build Instructions
-
-If you want to build the project locally or contribute to the open-source repository:
-
-**Prerequisites:**
-* *[Insert your chosen framework here, e.g., Node.js, Flutter SDK, React Native]*
-* Google Cloud Console account (for Google Tasks API credentials)
-* Hack Club API access
-
-**Setup:**
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/yourusername/cren-dashboard.git](https://github.com/yourusername/cren-dashboard.git)
-   
+- Real Hack Club OAuth, so status pulls automatically instead of manual entry
+- Maybe a backup/export option, since local-only storage means a lost phone means lost data
